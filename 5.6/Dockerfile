@@ -12,7 +12,7 @@ FROM ubuntu:latest
 MAINTAINER DevOps <devops@kendu.si>
 
 ENV DEBIAN_FRONTEND noninteractive
-
+RUN locale-gen sl_SI.UTF-8
 # Use Ondřej Surý's PHP 5.6 packages
 RUN echo "deb http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu trusty main " \
        > /etc/apt/sources.list.d/ondrej.list
