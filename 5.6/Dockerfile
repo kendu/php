@@ -32,6 +32,7 @@ RUN apt-get -y install \
         php5-mcrypt \
         php5-memcache \
         php5-pgsql \
+        php5-mysql \
         php5-readline \
         php5-sqlite \
         php5-xdebug \
