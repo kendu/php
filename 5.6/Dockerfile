@@ -36,20 +36,17 @@ RUN apt-get -y install \
         php5-readline \
         php5-sqlite \
         php5-xdebug \
+        php5-gd \
         wget \
         git \
         php5-cli \
         php5-readline \
-        npm \
     && \
     apt-get clean
 
 RUN php5enmod mcrypt
 RUN rm /etc/php5/fpm/pool.d/www.conf
-RUN wget -qO /usr/local/bin/composer https://getcomposer.org/composer.phar && \
-    chmod +x /usr/local/bin/composer
-RUN ln -s /usr/bin/nodejs /usr/bin/node
-RUN npm install -g bower
+
 WORKDIR /opt/web
 
 # FPM
