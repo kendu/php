@@ -24,7 +24,6 @@ RUN apt-get -y install \
         php5=5.6.* \
         php5-fpm \
         php5-common \
-        php5-curl \
         php5-gmp \
         php5-imagick \
         php5-intl \
@@ -37,7 +36,6 @@ RUN apt-get -y install \
         php5-sqlite \
         php5-xdebug \
         php5-gd \
-        wget \
         git \
         php5-cli \
         php5-readline \
