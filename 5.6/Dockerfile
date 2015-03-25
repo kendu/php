@@ -12,7 +12,12 @@ FROM ubuntu:latest
 MAINTAINER DevOps <devops@kendu.si>
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN locale-gen sl_SI.UTF-8
+RUN locale-gen sl_SI.UTF-8; \
+    locale-gen hu_HU.UTF-8; \
+    locale-gen pl_PL.UTF-8; \
+    locale-gen de_AT.UTF-8; \
+    locale-gen cs_CZ.UTF-8
+
 # Use Ondřej Surý's PHP 5.6 packages
 RUN echo "deb http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu trusty main " \
        > /etc/apt/sources.list.d/ondrej.list
@@ -38,7 +43,6 @@ RUN apt-get -y install \
         php5-gd \
         git \
         php5-cli \
-        php5-readline \
     && \
     apt-get clean
 
