@@ -16,7 +16,10 @@ RUN locale-gen sl_SI.UTF-8; \
     locale-gen hu_HU.UTF-8; \
     locale-gen pl_PL.UTF-8; \
     locale-gen de_AT.UTF-8; \
-    locale-gen cs_CZ.UTF-8
+    locale-gen cs_CZ.UTF-8; \
+    locale-gen it_IT.UTF-8; \
+    locale-gen en_US.UTF-8; \
+    locale-gen en_GB.UTF-8;
 
 # Use Ondřej Surý's PHP 5.6 packages
 RUN echo "deb http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu trusty main " \
@@ -29,6 +32,7 @@ RUN apt-get -y install \
         php5=5.6.* \
         php5-fpm \
         php5-common \
+        php5-curl \
         php5-gmp \
         php5-imagick \
         php5-intl \
