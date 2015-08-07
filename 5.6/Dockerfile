@@ -19,6 +19,8 @@ RUN locale-gen sl_SI.UTF-8; \
     locale-gen cs_CZ.UTF-8; \
     locale-gen it_IT.UTF-8; \
     locale-gen en_US.UTF-8; \
+    locale-gen de_DE.UTF-8; \
+    locale-gen fr_FR.UTF-8; \
     locale-gen en_GB.UTF-8;
 
 # Use Ondřej Surý's PHP 5.6 packages
