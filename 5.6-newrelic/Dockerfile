@@ -59,7 +59,7 @@ RUN apt-get update -y; \
 
 RUN php5enmod mcrypt
 RUN rm /etc/php5/fpm/pool.d/www.conf
-ADD newrelic_php_config /etc/php5/fpm/conf.d/20-newrelic.ini
+ADD newrelic_php_config /etc/php5/fpm/conf.d/newrelic.ini
 WORKDIR /opt/web
 
 # FPM
