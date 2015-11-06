@@ -18,7 +18,6 @@ ADD install.sh /tmp/install.sh
 RUN /bin/bash /tmp/install.sh
 ADD php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf
 
-
 WORKDIR /opt/web
 
 # FPM
