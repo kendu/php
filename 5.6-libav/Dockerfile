@@ -16,11 +16,7 @@ MAINTAINER devops@kendu.si
 ################################---BUILD---#####################################
 
 RUN apt-get update; \
-    apt-get --yes --force-yes install php5-dev \
-        php-pear \
-        libgearman-dev; \
-    pecl install gearman; \
-    echo 'extension=gearman.so' | tee -a /etc/php5/fpm/php.ini /etc/php5/cli/php.ini; \
+    apt-get --yes --force-yes install libav-tools; \
     apt-get clean
 
 ################################################################################
