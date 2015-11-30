@@ -18,5 +18,6 @@ MAINTAINER devops@kendu.si
 RUN apt-get update; \
     apt-get --yes --force-yes install libav-tools; \
     apt-get clean
+ADD fonts/* /usr/share/fonts/truetype/google-fonts/
 
 ################################################################################
