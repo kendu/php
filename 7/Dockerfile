@@ -1,26 +1,69 @@
+################################################################################
+#                                                                              #
+#                                 {o,o}                                        #
+#                                 |)__)                                        #
+#                                 -"-"-                                        #
+#                                                                              #
+################################################################################
 #
-#       .
-#        ":"
-#      ___:____     |"\/"|
-#    ,'        `.    \  /
-#    |  O        \___/  |
-#  ~^~^~^~^~^~^~^~^~^~^~^~^~
-
 # The php-fpm container
+#
+#################################---INFO---#####################################
 
 FROM ubuntu:latest
 MAINTAINER DevOps <devops@kendu.si>
 
+################################################################################
+
+#################################---ENV---######################################
+
 ENV DEBIAN_FRONTEND noninteractive
+
+################################################################################
+
+################################---BUILD---#####################################
+
+RUN apt-get update && \
+    apt-get install --yes --force-yes --no-install-recommends \
+        software-properties-common
+
 RUN locale-gen en_US.UTF-8
+RUN add-apt-repository ppa:ondrej/php
+    apt-get update && \
+    apt-get upgrade --yes --force-yes && \
+    apt-get install --yes --force-yes --no-install-recommends \
+        php7.0 \
+        php7.0-cli \
+        php7.0-fpm \
+        php7.0-common \
+        php7.0-curl \
+        php7.0-gmp \
+        php-imagick \
+        php7.0-intl \
+        php7.0-json \
+        php7.0-mcrypt \
+        php7.0-pgsql \
+        php7.0-mysql \
+        php7.0-readline \
+        php7.0-sqlite3 \
+        php7.0-gd \
+        wget \
+        git \
+    && \
+    apt-get clean
 
-ADD install.sh /tmp/install.sh
-RUN /bin/bash /tmp/install.sh
-ADD php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf
+WORKDIR /var/www/html
 
-WORKDIR /opt/web
+################################################################################
 
-# FPM
+#################################---EXPOSE---###################################
+
 EXPOSE 9000
 
+################################################################################
+
+#################################---CMD---######################################
+
 CMD php-fpm7.0
+
+################################################################################
