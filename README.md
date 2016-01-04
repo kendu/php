@@ -1,20 +1,27 @@
-Php version is equal to the image tag
+# PHP 7 image
 
-php modules:
+This docker images runs php-fpm. Usually you'd like to use this with nginx.
 
-    fpm
-    curl
-    gmp
-    imagick
-    intl
-    json
-    mcrypt
-    memcached
-    pgsql
-    readline
-    xdebug
+## Included modules
+* curl
+* gmp
+* intl
+* json
+* mcrypt
+* pgsql
+* mysql
+* readline
+* sqlite3
+* gd
 
-Also contains:
+Also includess wget and git
 
-    composer
-    git
+
+## Config files
+Php 7 config files can be found in the `/etc/php/7.0` directory.  
+This is different from php5.6, so take care when using your configs in there.  
+You will most likelly need the following:
+* `/etc/php/7.0/fpm/php-fpm.conf`
+* `/etc/php/7.0/fpm/php.ini`
+* `/etc/php/7.0/fpm/conf.d/`
+* `/etc/php/7.0/fpm/pool.d/`

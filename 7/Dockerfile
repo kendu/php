@@ -18,6 +18,7 @@ MAINTAINER DevOps <devops@kendu.si>
 #################################---ENV---######################################
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV LANG=C.UTF-8
 
 ################################################################################
 
@@ -28,7 +29,7 @@ RUN apt-get update && \
         software-properties-common
 
 RUN locale-gen en_US.UTF-8
-RUN add-apt-repository ppa:ondrej/php
+RUN add-apt-repository ppa:ondrej/php; \
     apt-get update && \
     apt-get upgrade --yes --force-yes && \
     apt-get install --yes --force-yes --no-install-recommends \
@@ -38,7 +39,6 @@ RUN add-apt-repository ppa:ondrej/php
         php7.0-common \
         php7.0-curl \
         php7.0-gmp \
-        php-imagick \
         php7.0-intl \
         php7.0-json \
         php7.0-mcrypt \
@@ -53,6 +53,7 @@ RUN add-apt-repository ppa:ondrej/php
     apt-get clean
 
 WORKDIR /var/www/html
+COPY php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf
 
 ################################################################################
 
