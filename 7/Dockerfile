@@ -28,7 +28,9 @@ RUN apt-get update && \
     apt-get install --yes --force-yes --no-install-recommends \
         software-properties-common
 
-RUN locale-gen en_US.UTF-8
+RUN locale-gen en_US.UTF-8; \
+    echo "LANG=C.UTF-8" > /etc/default/locale
+
 RUN add-apt-repository ppa:ondrej/php; \
     apt-get update && \
     apt-get upgrade --yes --force-yes && \
