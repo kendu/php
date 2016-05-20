@@ -49,6 +49,8 @@ RUN add-apt-repository ppa:ondrej/php; \
         php7.0-readline \
         php7.0-sqlite3 \
         php7.0-gd \
+        php7.0-mbstring \
+        php7.0-soap \
         wget \
         git \
     && \
