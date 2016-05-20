@@ -11,7 +11,7 @@
 #################################---INFO---#####################################
 
 FROM ubuntu:latest
-MAINTAINER DevOps <devops@kendu.si>
+MAINTAINER Kendu <devops@kendu.si>
 
 ################################################################################
 
@@ -28,10 +28,9 @@ RUN locale-gen sl_SI.UTF-8
 RUN echo "deb http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu trusty main " \
        > /etc/apt/sources.list.d/ondrej.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
-RUN apt-get update -y
-
-# Instaling package and clean up the mess
-RUN apt-get -y install \
+RUN apt-get update; \
+    apt-get upgrade -y; \
+    apt-get -y install \
         php5=5.6.* \
         php5-fpm \
         php5-common \
