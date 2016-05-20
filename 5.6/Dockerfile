@@ -25,38 +25,38 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN locale-gen sl_SI.UTF-8
 # Use Ondřej Surý's PHP 5.6 packages
-RUN echo "deb http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu trusty main " \
+RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main  " \
        > /etc/apt/sources.list.d/ondrej.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
 RUN apt-get update; \
     apt-get upgrade -y; \
     apt-get -y install \
-        php5=5.6.* \
-        php5-fpm \
-        php5-common \
-        php5-curl \
-        php5-gmp \
-        php5-imagick \
-        php5-intl \
-        php5-json \
-        php5-mcrypt \
-        php5-memcache \
-        php5-mongo \
-        php5-pgsql \
-        php5-mysql \
-        php5-readline \
-        php5-sqlite \
-        php5-xdebug \
-        php5-gd \
+        php5.6 \
+        php5.6-fpm \
+        php5.6-common \
+        php5.6-curl \
+        php5.6-gmp \
+        php5.6-imagick \
+        php5.6-intl \
+        php5.6-json \
+        php5.6-mcrypt \
+        php5.6-memcache \
+        php5.6-mongo \
+        php5.6-pgsql \
+        php5.6-mysql \
+        php5.6-readline \
+        php5.6-sqlite \
+        php5.6-xdebug \
+        php5.6-gd \
         wget \
         git \
-        php5-cli \
-        php5-readline \
+        php5.6-cli \
+        php5.6-readline \
     && \
     apt-get clean
 
-RUN php5enmod mcrypt
-RUN rm /etc/php5/fpm/pool.d/www.conf
+RUN phpenmod mcrypt
+RUN rm /etc/php/5.6/fpm/pool.d/www.conf
 WORKDIR /opt/web
 
 ################################################################################
