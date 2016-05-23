@@ -55,8 +55,8 @@ RUN apt-get update; \
     && \
     apt-get clean
 
-RUN phpenmod mcrypt
-RUN rm /etc/php/5.6/fpm/pool.d/www.conf
+RUN phpenmod mcrypt; \
+    mkdir /run/php
 WORKDIR /opt/web
 
 ################################################################################
@@ -69,8 +69,8 @@ EXPOSE 9000
 
 #################################---CMD---######################################
 
-CMD php5-fpm --fpm-config=/etc/php5/fpm/php-fpm.conf \
+CMD php-fpm5.6 -F --fpm-config=/etc/php/5.6/fpm/php-fpm.conf \
              --force-stderr \
-             -c /etc/php5/fpm/php.ini
+             -c /etc/php/5.6/fpm/php.ini
 
 ################################################################################
