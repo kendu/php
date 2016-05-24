@@ -1,6 +1,6 @@
 # PHP 7 image
 
-This docker images runs php-fpm. Usually you'd like to use this with nginx.
+This docker image runs php-fpm. Usually you'd like to use this with nginx.
 
 ## Included modules
 * curl
