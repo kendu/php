@@ -43,6 +43,7 @@ RUN add-apt-repository ppa:ondrej/php; \
         php7.0-gmp \
         php7.0-intl \
         php7.0-json \
+        php7.0-xml \
         php7.0-mcrypt \
         php7.0-pgsql \
         php7.0-mysql \
