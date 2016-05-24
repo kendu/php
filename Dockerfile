@@ -56,6 +56,8 @@ RUN add-apt-repository ppa:ondrej/php; \
     && \
     apt-get clean
 
+RUN mkdir /run/php
+
 WORKDIR /var/www/html
 COPY php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf
 
