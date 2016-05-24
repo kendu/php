@@ -39,6 +39,7 @@ RUN apt-get update; \
         php5.6-imagick \
         php5.6-intl \
         php5.6-json \
+        php5.6-xml \
         php5.6-mcrypt \
         php5.6-memcache \
         php5.6-mongo \
