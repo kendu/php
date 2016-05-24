@@ -48,6 +48,7 @@ RUN apt-get update; \
         php5.6-sqlite \
         php5.6-xdebug \
         php5.6-gd \
+        php5.6-mbstring \
         wget \
         git \
         php5.6-cli \
