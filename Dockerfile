@@ -50,6 +50,7 @@ RUN apt-get update; \
         php5.6-xdebug \
         php5.6-gd \
         php5.6-mbstring \
+        php5.6-soap \
         wget \
         git \
         php5.6-cli \
