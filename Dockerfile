@@ -8,25 +8,38 @@
 
 #################################---INFO---#####################################
 
-FROM kendu/php:5.6
+FROM kendu/php:5.6-localized
 MAINTAINER Kendu devops@kendu.si
+
+################################################################################
+
+#################################---ENV---######################################
+
+ENV DEBIAN_FRONTEND noninteractive
 
 ################################################################################
 
 ################################---BUILD---#####################################
 
-RUN locale-gen sl_SI.UTF-8; \
-    locale-gen hu_HU.UTF-8; \
-    locale-gen pl_PL.UTF-8; \
-    locale-gen de_AT.UTF-8; \
-    locale-gen cs_CZ.UTF-8; \
-    locale-gen it_IT.UTF-8; \
-    locale-gen en_US.UTF-8; \
-    locale-gen de_DE.UTF-8; \
-    locale-gen fr_FR.UTF-8; \
-    locale-gen en_GB.UTF-8; \
-    locale-gen es_ES.UTF-8; \
-    locale-gen ja_JP.UTF-8; \
-    locale-gen zh_CN.UTF-8;
+RUN apt-get update; \
+    apt-get install -y phpunit \
+        advancecomp \
+        pngcrush \
+        gifsicle \
+        jpegoptim \
+        libjpeg-progs \
+        libjpeg8-dbg \
+        libimage-exiftool-perl \
+        imagemagick \
+        pngnq \
+        tar \
+        unzip \
+        build-essential \
+        libpng-dev; \
+    apt-get clean
+ADD install.sh /opt/install.sh
+RUN chmod +x /opt/install.sh; \
+    /opt/install.sh; \
+    rm /opt/install.sh
 
 ################################################################################
